@@ -15,15 +15,21 @@ drwx------ dummy dummy ........... dummy
 
 ======================
 sudo su -
+
 apt install -y git redis-server build-essential python3 python3-pip libmagic-dev mysql-server mysql-client libmysqlclient-dev libexiv2-dev libssl1.0-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget libffi-dev libboost-python-dev arcanist curl
 
+
 adduser --disabled-password --gecos "" app
+
 
 su - app
 
 git clone https://phab.phuks.co/source/throat.git
+
 OR
-git clone https://github.com/Polsaker/throat
+
+git clone https://github.com/Polsaker/throat <Defunct now
+
 OR
 
 git clone https://github.com/jsailo/lawrkhawm.git
@@ -32,21 +38,32 @@ AT THIS POINT YOU CAN CORRECT PEEWEE TO THE LATEST VERSION 3.10.0
 cd throat
 
 nano requirements.txt
+                                                      
 
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+                                                      
 echo 'export PATH="/home/app/.pyenv/bin:PATH"' >> ~/.bashrc
+ 
 echo 'eval "(pyenv init -)"' >> ~/.bashrc
+ 
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+ 
 
 script
-BELOW SCRIPT TAKES THE LONGEST TIME...
+THE FOLLOWING SCRIPT TAKES THE LONGEST TIME...
+ 
 pyenv install 3.5.2
-pyenv virtualenv 3.5.2 app
-exit
-exit
-SCREEN GOES BLANK
+
+ pyenv virtualenv 3.5.2 app
+
+ exit
+
+ exit
+
+ <BLANK SCREEN>
 
 apt install -y npm
+  
 (INSTALL above AS ROOT)
 
 su - app
