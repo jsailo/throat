@@ -10,6 +10,7 @@ $ ls -ld /home dummy
 drwx------ dummy dummy ........... dummy
 
  chown dummy:dummy /home/dummy
+ 
  chmod 700 /home/dummy
 
 ======================
