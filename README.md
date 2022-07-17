@@ -1,4 +1,5 @@
 =================START HERE ====================
+
 IF USER APP EXISTS
 userdel -r app
 sudo userdel app
