@@ -1,4 +1,5 @@
-=================START HERE ====================
+
+>START HERE
 
 IF USER APP EXISTS
 userdel -r app
@@ -13,7 +14,7 @@ drwx------ dummy dummy ........... dummy
  
  chmod 700 /home/dummy
 
-======================
+
 sudo su -
 
 apt install -y git redis-server build-essential python3 python3-pip libmagic-dev mysql-server mysql-client libmysqlclient-dev libexiv2-dev libssl1.0-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget libffi-dev libboost-python-dev arcanist curl
@@ -64,7 +65,7 @@ pyenv install 3.5.2
 
 apt install -y npm
   
-(INSTALL above AS ROOT)
+>INSTALL above AS ROOT
 
 su - app
 script
@@ -78,7 +79,8 @@ pip install --upgrade pip
 ^^----ALL FINE TILL HERE NO ERRORS
 pip install -r requirements.txt
 
-===============OPTIONAL FOR PY2EXIV===============================
+>OPTIONAL FOR PY2EXIV
+  
 pip install py3exiv2==0.1.0
 sudo apt-get install build-essential python-all-dev libexiv2-dev libboost-python-dev
 pip3 install py3exiv2
@@ -110,7 +112,8 @@ services mysql start
 OR 
 /etc/init.d/mysql start
 
-================FOR EXPORTING YOUR EXITING PHUKS DATABASE===================
+>Export your Phuks database
+  
 $ mysqldump throat > /home/app/throat_latest.sql
 
 $ mysql
@@ -119,11 +122,12 @@ mysql> drop database throat;
 mysql> CREATE DATABASE throat;
 exit
 
-=====================YOUR DATABASE ENTRY SHOULD LOOK LIKE THIS=====================
+> Your Sample database entry
+  
   GNU nano 2.9.3
   /etc/mysql/debian.cnf                                           
 
-Automatically generated for Debian scripts. DO NOT TOUCH!
+>Automatically generated for Debian scripts. DO NOT TOUCH!
 
 [client]
 host     = localhost
@@ -133,7 +137,7 @@ socket   = /var/run/mysqld/mysqld.sock
 [mysql_upgrade]
 host     = localhost
 user     = debian-sys-maint
-password = 0L6hYNDw4QwpmsQ4
+password = 0L6hYNDw4QwpmsQ4 (sample)
 
 socket   = /var/run/mysqld/mysqld.sock
 
@@ -148,9 +152,10 @@ script
 cd throat
 cp example.config.py config.py
 nano config.py
-This is where you enter the database connection strings (NOTE without CRLF. In notepad++ use paste special > paste binary content)
+                                                    
+>This is where you enter the database connection strings (NOTE without CRLF. In notepad++ use paste special > paste binary content)
 
-Database connection information format in config.py
+>Database connection information format in config.py
 
 set DB_USER to debian-sys-maint
 
@@ -171,8 +176,7 @@ find IP of your machine, visit: http://<ip address>:5000
 
 username: admin, password: adminadmin
 
-===============
-TO HOST IT ON A REAL SITE
+> To host in production
 
 chmod 0777 /home/app/throat/start.sh
 supervisorctl start throat
