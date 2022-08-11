@@ -157,10 +157,13 @@ OR
 
     ./wsgi.py   < IF REDIS ERROR< START REDIS > sudo service redis-server start 
 
->To find the IP of your machine, visit: http://<ip address>:5000
-
-    username: admin, password: adminadmin
+>To find the IP of your machine, visit http://<ip address>:5000
+    username: admin
+    
+    password: adminadmin
+    
 
 >To host in production
-     chmod 0777 /home/app/throat/start.sh
+    
+    chmod 0777 /home/app/throat/start.sh
     supervisorctl start throat
